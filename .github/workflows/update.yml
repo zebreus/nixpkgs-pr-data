@@ -1,4 +1,4 @@
-name: Publish
+name: Update data
 on:
   schedule:
     - cron: "0 4 * * *"
@@ -12,4 +12,4 @@ jobs:
         with:
           deno-version: v1.x
       - run: |
-          deno run -A update.ts
+          deno run -A update.ts update
