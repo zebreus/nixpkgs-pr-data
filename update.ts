@@ -2,7 +2,7 @@ import { Octokit } from "npm:octokit";
 import { format } from "https://deno.land/std@0.215.0/datetime/format.ts";
 
 const octokit = new Octokit({
-  auth: Deno.env.get("GITHUB_TOKEN"),
+  auth: Deno.env.get("MY_GITHUB_TOKEN"),
 });
 
 type User = {
