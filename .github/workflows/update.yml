@@ -3,6 +3,15 @@ on:
   schedule:
     - cron: "0 4 * * *"
   workflow_dispatch:
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+  actions: read
+  repository-projects: read
+  packages: read
+  pages: read
+  statuses: read
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -13,3 +22,5 @@ jobs:
           deno-version: v1.x
       - run: |
           deno run -A update.ts update
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

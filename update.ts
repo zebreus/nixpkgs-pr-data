@@ -1,8 +1,9 @@
-import { Octokit } from "npm:octokit";
+import { Octokit, App } from "https://esm.sh/octokit?dts";
 import { format } from "https://deno.land/std@0.215.0/datetime/format.ts";
 
 const octokit = new Octokit({
-  auth: Deno.env.get("MY_GITHUB_TOKEN"),
+  userAgent: "nixpkgs-pr-data",
+  auth: Deno.env.get("GITHUB_TOKEN"),
 });
 
 type User = {
