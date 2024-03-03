@@ -4,19 +4,14 @@ on:
     - cron: "0 4 * * *"
   workflow_dispatch:
 permissions:
-  actions: write
-  checks: write
+  actions: read
+  checks: read
   contents: write
-  deployments: write
-  id-token: write
-  issues: write
-  discussions: write
-  packages: write
-  pages: write
-  pull-requests: write
-  repository-projects: write
-  security-events: write
-  statuses: write
+  deployments: read
+  issues: read
+  discussions: read
+  pull-requests: read
+  statuses: read
 jobs:
   publish:
     runs-on: ubuntu-latest
